@@ -1,0 +1,403 @@
+* {font-family: Arial, Helvetica, sans-serif;
+line-height: 20px;
+font-size: 15px;}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /*agar pas pindah bar hitam ke putih efeknya halus*/
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.layar-dalam {
+    width: 1000px;
+    margin: auto;
+}
+
+.layar-penuh{
+    width: 100%;
+}
+
+nav{
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    width: 100%;
+    transition: background-color 0,5s ease;
+}
+
+nav.putih{
+    background-color: #fff;
+}
+
+nav.putih .tombol-menu .garis{
+    background-color: #333;
+}
+nav .logo{
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+}
+
+nav .logo img {
+    width: 120px;
+    vertical-align: middle;
+}
+
+nav .menu{
+    float: right;
+    height: 60px;
+    max-width: 600px;
+}
+
+nav .menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu ul li{
+    list-style-type: none;
+    float: left;
+    line-height: 60px;  
+}
+
+nav ul li a{
+    color: #fff;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/*pengaturan header*/
+header{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    background-image: url("img/sampah.jpg");
+    background-size: cover;
+    
+}
+
+
+header .intro {
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+
+header .intro h3{
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.tombol {
+    background-color: #c86b85;
+    height: 40px;
+    line-height: 42px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius:4px ;
+}
+
+.tombol-menu{
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.tombol-menu .garis{
+    height: 3px;
+    background-color: white;
+}
+
+section{
+    padding: 50px 0px 50px 0px;
+}
+
+section h3 {
+    font-size: 30px;
+}
+
+section h3::after{
+    content: "";
+    border-bottom: 5px solid #c86b85;
+    width: 52px;
+    display: block;
+    margin: 20px auto;
+}
+
+#aboutus, #location{
+    text-align: center;
+    background-color: white;
+}
+
+nav.putih{
+    background-color: #fff;
+}
+
+nav.putih .tombol-menu .garis  {
+    background-color: #333;
+}
+nav.putih ul li a{
+    color: #333;
+}
+section p.ringkasan{
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    color: #ababab;
+}
+
+section .konten-isi p{
+    font-style: normal;
+}
+nav .logo img.hitam{
+    display: none;
+}
+
+section#gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px; 
+}
+
+section#gallery div{
+    padding: 10px;
+}
+section#gallery div img{
+    height: 100px;
+    border-radius: 5px;
+}
+section#gallery div img:hover { /*untuk memberi effect membasar pada gambar jika kursor diletakkan di kgambr  */
+    transition: all 0,2s ease-in-out;
+    transform: scale(1.1);
+}
+
+/*detail info*/
+ .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 2vh;
+	position: relative;
+    padding: 15px;
+}
+
+ .container .box{
+	width: 320px;
+	height: 250px;
+	line-height: 1,5;
+	color: white;
+	display: flex;
+	border-radius: 8px;
+	/*untuk 3 card*/
+	margin-right: 30px;
+	transition: all .5s;
+}
+.container2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 2vh;
+	position: relative;
+}
+
+ .container2 .box{
+	width: 320px;
+	height: 250px;
+	line-height: 1,5;
+	color: white;
+	display: flex;
+	border-radius: 8px;
+	/*untuk 3 card*/
+	margin-right: 30px;
+	transition: all .5s;
+}
+
+ .box {
+	background-image: url(img/separate_organic.jpg);
+	width: 300px;
+	height: 200px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: 0 10px 20px rgba(0,0,0,.7);
+	border-radius: 8px;
+}
+
+ .box h1{
+	font-size: 25px;
+}
+
+ .box p{
+	font-size: 13px;
+}
+
+ .box .btn{
+	outline: none;
+	border: none;
+	padding: 3px;
+	background: transparent;
+	cursor: pointer;
+	color: #fff;
+	margin: 3px 0 8px 0;
+	border: 1px solid #fff;
+	transition: all .5s;
+}
+
+ .box.btn:hover {
+	padding: 3px 10px;
+}
+
+.text {
+	background-color: rgba(0,0,0,.6);
+	opacity: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: center;
+	border-radius: 8px;
+	transition: all .5s;
+}
+
+ .text:hover {
+	opacity: 1;
+}
+
+ .box:hover{
+	transform: translateY(20px);
+}
+ .two {
+	background-image: url(img/.jpg);
+}
+ .three {
+	background-image: url(img/=.jpg);
+}
+.four {
+	background-image: url(img/.jpg);
+}
+ .five {
+	background-image: url(img/.jpg);
+}
+ .six {
+	background-image: url(img/.jpg);
+}
+section{
+    background-color: rgb(231, 226, 226);
+}
+
+/*pengeturan footer*/
+footer{
+    padding: 50px 0px 50px 0px;
+    background-color: #344a40;
+    color: #fff;
+}
+
+footer .layar-dalam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer .layar-dalam div{
+    width: 20%;
+}
+
+footer .layar-dalam h5{
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .layar-dalam .copyright{
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #666;
+    text-align: center;
+}
+
+/**/
+.collapsible {
+    background-color: rgb(7, 7, 7);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+@media  screen and (max-width : 991.98px) {
+    .layar-dalam {
+        width: 90%;
+    }
+    nav .menu ul {
+        display: none;
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav .menu ul li{
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        line-height: 40px;
+    }
+    nav .menu ul li a{
+        color: #333;
+    }
+    .tombol-menu{
+        display: flex;
+    }
+    .informasi .container{
+        display: block;
+    }
+    .container2{
+        display: block;
+    }
+    
+}
