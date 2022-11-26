@@ -35,7 +35,7 @@
     Pilih Gambar
   </label>
   <input style="display: none;" type="file" id="inputImage" accept="image/*" onchange="renderImage(this)" />
-  <button class="btn" onclick="predictImage()">
+  <button class="btn">
     Klasifikasi
   </button>
   <div class="border">
@@ -47,10 +47,19 @@
   <ul id="elemDetail">
     
   </ul>
+  <button class="buttonWebcam" id="webcam-control" onclick="getPicture()">Buka Kamera</button>
+  <button class="buttonWebcam" onclick="snapPhoto()">Ambil foto</button>
+  <div class="flash"></div>
+  <a href="#" id="download-photo" download="selfie.png" target="_blank" title="Save Photo">file_download</a>  
+  
+  <video id="webcam" autoplay playsinline></video>
+  <canvas id="canvas" class="d-none"></canvas>
   
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
   <script src="script.js"></script>
+
 </body>
 
 </html>

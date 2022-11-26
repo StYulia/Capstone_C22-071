@@ -4,10 +4,45 @@ const elemImage = document.getElementById("elemImage");
 const elemPrediksi = document.getElementById("elemPrediksi");
 const elemDetail = document.getElementById("elemDetail");
 
+const webcamElement = document.getElementById('webcam');
+const canvasElement = document.getElementById('canvas');
+const webcam = new Webcam(webcamElement, 'user', canvasElement);
+
+
+function getPicture() {
+  webcam.start()
+  .then(result =>{
+     console.log("webcam started");
+  })
+  .catch(err => {
+      console.log(err);
+  });
+}
+
+function snapPhoto() {
+  let picture = webcam.snap();
+  document.querySelector('#download-photo').href = picture;
+
+  let image = new Image();
+  image.src = picture;
+
+  image.onload = function () {
+    predictImage(image);
+  }
+
+}
+
+
 const renderImage = (input) => {
   // Menampilkan gambar yang diinputkan
   elemImage.src = window.URL.createObjectURL(input.files[0]);
+
+  elemImage.onload = function () {
+    predictImage(elemImage);
+  }
+
 }
+
 
 /** MODEL HANDLER **/
 let model = null;
@@ -21,22 +56,22 @@ let model = null;
 
 const label = [ // Harus urut abjad
   "Organic",
-  "Recyclable"
+  "Non-Organic"
 ]
 
-const predictImage = async () => {
+const predictImage = async (gambar) => {
   // 1) Cek dulu apakah model sudah dimuat atau belum
   if (model == null) {
     alert("Harap Tunggu, Model Belum Selesai Dimuat");
     return;
   }
   // Cek juga sebelum prediksi, gambar sudah diinputkan
-  if (!elemImage.getAttribute('src')) {
+  if (!gambar.getAttribute('src')) {
     alert("Harap inputkan gambar terlebih dulu yaa");
     return;
   }
   // 2) Mengambil data gambar pada tag image yang telah dirender
-  let tensor = tf.browser.fromPixels(elemImage);
+  let tensor = tf.browser.fromPixels(gambar);
   // 3) Menyesuaikan ukuran tensor dengan ukuran input pada model
   tensor = tensor.resizeNearestNeighbor([224, 224]);
   // 4) Lakukan normalisasi ukuran pixel dari (0, 255) -> (0, 1)
