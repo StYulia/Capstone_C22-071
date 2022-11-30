@@ -22,9 +22,13 @@
     .btn:focus {
       background-color: #59C1BD;
     }
-
+    
     .border {
         border: 3px solid black ;
+    }
+
+    .d-none {
+      display: none;
     }
   </style>
 </head>
@@ -35,11 +39,13 @@
     Pilih Gambar
   </label>
   <input style="display: none;" type="file" id="inputImage" accept="image/*" onchange="renderImage(this)" />
-  <button class="btn">
-    Klasifikasi
-  </button>
+  <button class="btn" id="webcam-control" onclick="getPicture()">Buka Kamera</button>
+  <button class="btn"  onclick="snapPhoto()">Ambil foto</button>
+
   <div class="border">
-    <img id="elemImage" src="" />
+    <img id="elemImage" class="d-none" src="" />
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="canvas" class="d-none"></canvas>
   </div>
   <h2>
     Hasil Prediksi: <span style="color: green;" id="elemPrediksi"></span>
@@ -47,13 +53,8 @@
   <ul id="elemDetail">
     
   </ul>
-  <button class="buttonWebcam" id="webcam-control" onclick="getPicture()">Buka Kamera</button>
-  <button class="buttonWebcam" onclick="snapPhoto()">Ambil foto</button>
   <div class="flash"></div>
   <a href="#" id="download-photo" download="selfie.png" target="_blank" title="Save Photo">file_download</a>  
-  
-  <video id="webcam" autoplay playsinline></video>
-  <canvas id="canvas" class="d-none"></canvas>
   
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>

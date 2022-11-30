@@ -7,9 +7,16 @@ const elemDetail = document.getElementById("elemDetail");
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const webcam = new Webcam(webcamElement, 'user', canvasElement);
+let canvass = document.getElementById('canvas')
+const takephoto = document.getElementById('take-picture');
 
 
 function getPicture() {
+
+  webcamElement.classList.remove('d-none');
+  canvass.classList.add("d-none");
+  elemImage.classList.add("d-none");
+
   webcam.start()
   .then(result =>{
      console.log("webcam started");
@@ -20,6 +27,9 @@ function getPicture() {
 }
 
 function snapPhoto() {
+
+  elemImage.classList.add("d-none");
+
   let picture = webcam.snap();
   document.querySelector('#download-photo').href = picture;
 
@@ -29,12 +39,23 @@ function snapPhoto() {
   image.onload = function () {
     predictImage(image);
   }
+  afterTakePhoto()
 
 }
 
 
+function afterTakePhoto() {
+  webcam.stop();
+  canvass.classList.remove("d-none");
+  webcamElement.classList.add('d-none');
+}
+
 const renderImage = (input) => {
   // Menampilkan gambar yang diinputkan
+  canvass.classList.add("d-none");
+  webcamElement.classList.add('d-none');
+  elemImage.classList.remove('d-none');
+
   elemImage.src = window.URL.createObjectURL(input.files[0]);
 
   elemImage.onload = function () {
