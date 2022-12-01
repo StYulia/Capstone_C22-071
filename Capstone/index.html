@@ -104,13 +104,51 @@
                                     <p>nadyazahrarahmadani@gmail.com</p>
                                 </div>
                         </section>
-                    <section id="Deteksi">
-                        <div class="layar-dalam">
-                            <h3 style="text-align: center;">Deteksi</h3>
-                            <P class="ringkasan">Input image to detect the type of trash</P>
-                            <a href="#????" class="tombol">Gallery</a>
-                            <a href="#????" class="tombol">Camera</a>
-                        </div>
+                        <section id="Deteksi">
+                            <div class="layar-dalam">
+                              <h3 style="text-align: center">Deteksi</h3>
+                              <p class="ringkasan">
+                                press the camera or input image from your gallery to detect the type of trash
+                              </p>
+                            </div>
+                            <div class="video">
+                              <img id="elemImage" class="d-none" src="" />
+                              <video id="webcam" autoplay playsinline></video>
+                              <canvas id="canvas" class="d-none"></canvas>
+                            </div>
+                            <div class="tombol-deteksi">
+                              <label for="inputImage" class="tombol"> Gallery </label>
+                              <input
+                                style="display: none"
+                                type="file"
+                                id="inputImage"
+                                accept="image/*"
+                                onchange="renderImage(this)"
+                              />
+                              <button class="tombol" id="webcam-control" onclick="getPicture()">
+                                Buka Kamera
+                              </button>
+                              <button class="tombol" onclick="snapPhoto()">Ambil foto</button>
+                              <button class="tombol" id="show-modal-btn">Lihat Prediksi</button>
+                            </div>
+                            <div id="overlay">
+                              <div id="prediksi">
+                                <button class="tombol" id="close-modal-btn">Close Prediksi</button>
+                                <h2>
+                                Hasil Prediksi:
+                                <span style="color: green" id="elemPrediksi"></span>
+                                </h2>
+                                <ul id="elemDetail"></ul>
+                                <div class="flash"></div>
+                                <a
+                                href="#"
+                                id="download-photo"
+                                download="selfie.png"
+                                target="_blank"
+                                title="Save Photo"
+                                >file_download</a>
+                            </div>
+                          </div>
                     </section>
                     <section id="Artikel">
                         <div class="layar-dalam">
@@ -206,8 +244,16 @@
                     </div>
                 </footer>
            
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script src="javascript.js"></script>
+                <script
+                src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"
+              ></script>
+              <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+              <script
+                type="text/javascript"
+                src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+              ></script>
+              <script src="javascript.js"></script>
 </body>
 </html>

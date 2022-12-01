@@ -33,6 +33,7 @@ nav .layar-dalam {
     flex-grow: 1;
 }
 
+
 /*Pengaturan ilutrasi gambar pada beranda*/
 .ilustrasi {
     flex-grow: 1;
@@ -225,7 +226,7 @@ nav .logo img.hitam{
     padding-right: 30px;
 }
 
-/*Pe ngaturanTIM KAMI*/
+/*Pngaturan TIM KAMI*/
 .timKami {
     padding: 0 100px;
 }
@@ -264,10 +265,53 @@ nav .logo img.hitam{
 }
 
 
+/*Pengaturan Deteksi*/
+
+.d-none {
+    display: none;
+  }
+  
+.video{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    
+}
+
+.tombol-deteksi{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-right : 10px;
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color:white;
+}
+
+#prediksi{
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+    background-color: #BBDEFB;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 /*Pengaturan Artikel*/
 .artikel{
     padding: 10px;
 }
+
 .container {
     box-sizing: border-box;
     min-height: 83vh;
