@@ -20,7 +20,7 @@ body{
 .layar-penuh{
     width: 100%;
 }
-
+/* Pengaturan Nav Bar*/
 nav{
     z-index: 100;
     color: #fff;
@@ -81,31 +81,41 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/*pengaturan header*/
+/*pengaturan header dan Beranda*/
 header{
     position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    z-index: 2;
-    background-image: url("img/sampah.jpg");
-    background-size: cover;
-    
+}
+
+.intro {
+    flex-grow: 1;
+    width: 1000px;
+}
+
+.intro h4 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.intro .deskripsi {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 
-header .intro {
-    z-index: 100;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    top: 50%;
+/*Pengaturan ilutrasi gambar pada beranda*/
+.ilustrasi {
+    flex-grow: 2;
+    text-align: right;
 }
 
-header .intro h3{
-    font-size: 50px;
-    margin: 0;
-    padding: 0;
+.ilustrasi img {
+    padding-top: 2px;
+    padding-left: 90px;
+    width: 700px;
+    text-align: right;
 }
 
 .tombol {
@@ -151,10 +161,6 @@ section h3::after{
     margin: 20px auto;
 }
 
-#aboutus, #location{
-    text-align: center;
-    background-color: white;
-}
 
 nav.putih{
     background-color: #fff;
@@ -173,151 +179,157 @@ section p.ringkasan{
     color: #ababab;
 }
 
-section .konten-isi p{
-    font-style: normal;
-}
 nav .logo img.hitam{
     display: none;
 }
 
-section#gallery{
+/*Pengaturan Tentang Kami*/
+.tentangKami {
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.tentangKami .containerTM {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    overflow: hidden;
-    padding: 10px 0px 10px 0px; 
+}
+.tentangKami .paragraf{
+    text-align: justify;
+    font-size: 50px;
+    font-weight: 500px;
+    margin-bottom: 100px;
+}
+.foto {
+    flex-grow: 1;
+    width: 700px;
+    justify-content: center;
+    align-self: center;
+} 
+
+.foto img {
+    width: 500px;
+    margin: 10px;
+    padding-right: 30px;
 }
 
-section#gallery div{
+/*Pe ngaturanTIM KAMI*/
+.timKami {
+    padding: 0 100px;
+}
+
+.timKami .column {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.timKami .column div {
+    padding: 30px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    text-align: center;
+}
+.timKami .column div img {
+    width: 115px;
+    height: 110px; 
+    border-radius: 50%; 
+}
+
+.timKami .column div h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+    
+}
+
+.timKami .column div p {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/*Pengaturan Artikel*/
+.artikel{
     padding: 10px;
 }
-section#gallery div img{
-    height: 100px;
+.container {
+    box-sizing: border-box;
+    min-height: 83vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    padding: 0.2em;
+  }
+  .card {
+    margin: 0.5em 1.2em 0.5em 0.1em;
+    height: 14em;
+    max-width: 99%;
+    flex: 1 1 auto;
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
+    border-radius: 15px;
+  }
+  .card img {
+    height: 100%;
+    max-width: 10em;
+    -o-object-fit: cover;
+       object-fit: cover;
+    flex: 1 1 auto;
+    border-radius: 15px 0 0 15px;
+  }
+  .card-body {
+    width: 12em;
+    max-height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    padding: 1em;
+  }
+  .card-body a {
+    min-width: 8.3em;
+    flex: none;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.6em 1.2em;
+    font-size: 0.92em;
+    color: #404646;
+    background: none;
+    border: 0.5px solid #777;
     border-radius: 5px;
-}
-section#gallery div img:hover { /*untuk memberi effect membasar pada gambar jika kursor diletakkan di kgambr  */
-    transition: all 0,2s ease-in-out;
-    transform: scale(1.1);
-}
-
-/*detail info*/
- .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 2vh;
-	position: relative;
-    padding: 15px;
-}
-
- .container .box{
-	width: 320px;
-	height: 250px;
-	line-height: 1,5;
-	color: white;
-	display: flex;
-	border-radius: 8px;
-	/*untuk 3 card*/
-	margin-right: 30px;
-	transition: all .5s;
-}
-.container2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 2vh;
-	position: relative;
-}
-
- .container2 .box{
-	width: 320px;
-	height: 250px;
-	line-height: 1,5;
-	color: white;
-	display: flex;
-	border-radius: 8px;
-	/*untuk 3 card*/
-	margin-right: 30px;
-	transition: all .5s;
-}
-
- .box {
-	background-image: url(img/separate_organic.jpg);
-	width: 300px;
-	height: 200px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	box-shadow: 0 10px 20px rgba(0,0,0,.7);
-	border-radius: 8px;
-}
-
- .box h1{
-	font-size: 25px;
-}
-
- .box p{
-	font-size: 13px;
-}
-
- .box .btn{
-	outline: none;
-	border: none;
-	padding: 3px;
-	background: transparent;
-	cursor: pointer;
-	color: #fff;
-	margin: 3px 0 8px 0;
-	border: 1px solid #fff;
-	transition: all .5s;
-}
-
- .box.btn:hover {
-	padding: 3px 10px;
-}
-
-.text {
-	background-color: rgba(0,0,0,.6);
-	opacity: 0;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	text-align: center;
-	border-radius: 8px;
-	transition: all .5s;
-}
-
- .text:hover {
-	opacity: 1;
-}
-
- .box:hover{
-	transform: translateY(20px);
-}
- .two {
-	background-image: url(img/.jpg);
-}
- .three {
-	background-image: url(img/=.jpg);
-}
-.four {
-	background-image: url(img/.jpg);
-}
- .five {
-	background-image: url(img/.jpg);
-}
- .six {
-	background-image: url(img/.jpg);
-}
-section{
-    background-color: rgb(231, 226, 226);
-}
+  }
+  .card-body a:hover {
+    border-color: #BBDEFB;
+    background:#BBDEFB;
+  }
+  .card-text {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 0.8em 0;
+    padding: 0;
+  }
+  .card-text h2, .card-text p {
+    margin-top: 0;
+  }
+  .card-text:after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 1em;
+    background: linear-gradient(rgba(255, 255, 255, 0), white);
+  }
 
 /*pengeturan footer*/
 footer{
-    padding: 50px 0px 50px 0px;
-    background-color: #344a40;
+    padding: 40px 0px 40px 0px;
+    background-color: #c86b85;
     color: #fff;
 }
 
@@ -368,8 +380,34 @@ footer .layar-dalam .copyright{
     overflow: hidden;
     background-color: #f1f1f1;
   }
-
+/*PENGATURAN LAYAR AGAR KONTEN MENYESUAIKAN*/
 @media  screen and (max-width : 991.98px) {
+    .ilustrasi {
+        display: none;
+    }
+    .foto {
+        display: none;
+    } 
+    .deskripsi {
+        padding: none;
+        margin: none;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .timKami .column {
+        display: inline;
+    }
+
+    .timKami {
+        padding: 0 10px;
+        display: inline;
+        
+    }
+    
+    .tentangKami {
+        padding: 0 10px;
+    }
     .layar-dalam {
         width: 90%;
     }
@@ -392,12 +430,6 @@ footer .layar-dalam .copyright{
     }
     .tombol-menu{
         display: flex;
-    }
-    .informasi .container{
-        display: block;
-    }
-    .container2{
-        display: block;
     }
     
 }
