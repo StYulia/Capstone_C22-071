@@ -60,7 +60,7 @@ nav{
 
 nav.putih{
     background-color: #fff;
-    padding-right: 30px;
+
 }
 
 nav.putih .tombol-menu .garis{
@@ -131,11 +131,8 @@ header{
     padding-bottom: 50px;
 }
 
-
-
-
 .tombol {
-    background-color: #c86b85;
+    background-color: #0E67A3;
     height: 40px;
     line-height: 42px;
     color: #fff;
@@ -171,7 +168,7 @@ section h3 {
 
 section h3::after{
     content: "";
-    border-bottom: 5px solid #c86b85;
+    border-bottom: 5px solid #0E67A3;
     width: 52px;
     display: block;
     margin: 20px auto;
@@ -388,7 +385,7 @@ nav .logo img.hitam{
 /*pengeturan footer*/
 footer{
     padding: 40px 100px;
-    background-color: #c86b85;
+    background-color: #086A35;
     color: #fff;
 }
 
@@ -400,6 +397,7 @@ footer .layar-dalam{
 
 footer .layar-dalam div{
     width: 20%;
+    flex-grow: 1;
 }
 
 footer .layar-dalam h5{
@@ -451,6 +449,14 @@ footer .layar-dalam .copyright{
         padding: none;
         margin: none;
     }
+    main{
+        padding: 0 10px;
+    }
+    footer .layar-dalam{
+        display: block;
+        width: auto;
+    }
+    
     .container {
         padding: 0 10px;
     }
@@ -467,9 +473,11 @@ footer .layar-dalam .copyright{
     .tentangKami {
         padding: 0 10px;
     }
-    .layar-dalam {
-        width: 90%;
+
+    nav .layar-dalam {
+        padding: 0 10px;
     }
+    
     nav .menu ul {
         display: none;
         margin-top: 60px;

@@ -14,7 +14,7 @@ function klikMenu(){
 //frame box jquery untuk nav menu
 $ (document).ready(function () {
     var width = $(window).width();
-    if (width < 990) {
+    if (width < 980) {
         klikMenu();
     }
 })
@@ -22,7 +22,7 @@ $ (document).ready(function () {
 //pengecekan lebar
 $(window).resize(function(){
     var width = $(window).width();
-    if(width > 989){
+    if(width > 980){
         menu.css("display","block");
         //display:block
     }else{
