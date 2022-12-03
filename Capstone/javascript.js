@@ -1,6 +1,6 @@
 //menu
-var tombolMenu =  $(".tombol-menu");
-var menu = $("nav .menu ul");
+let tombolMenu =  $(".tombol-menu");
+let menu = $("nav .menu ul");
 
 function klikMenu(){
     tombolMenu.click(function(){
@@ -13,7 +13,7 @@ function klikMenu(){
 
 //frame box jquery untuk nav menu
 $ (document).ready(function () {
-    var width = $(window).width();
+    let width = $(window).width();
     if (width < 980) {
         klikMenu();
     }
@@ -21,7 +21,7 @@ $ (document).ready(function () {
 
 //pengecekan lebar
 $(window).resize(function(){
-    var width = $(window).width();
+    let width = $(window).width();
     if(width > 980){
         menu.css("display","block");
         //display:block
@@ -33,7 +33,7 @@ $(window).resize(function(){
 
 //efek scroll
 $ (document).ready(function () {
-    var scroll_pos = 0;
+    let scroll_pos = 0;
     $(document).scroll(function (){
         scroll_pos = $(this).scrollTop();
         if(scroll_pos > 0){
@@ -61,45 +61,76 @@ const webcam = new Webcam(webcamElement, 'user', canvasElement);
 let canvass = document.getElementById('canvas')
 const takephoto = document.getElementById('take-picture');
 
+const overlay = document.querySelector("#overlay");
+
+let WebcamControl = document.getElementById("webcam-control")
+
 
 function getPicture() {
 
   webcamElement.classList.remove('d-none');
   canvass.classList.add("d-none");
-  elemImage.classList.add("d-none");
 
-  webcam.start()
-  .then(result =>{
-     console.log("webcam started");
-  })
-  .catch(err => {
-      console.log(err);
-  });
+  currentvalue = WebcamControl.value;
+  if(currentvalue == "On"){
+    WebcamControl.value="Off";
+    webcamElement.style.display="inline";
+    webcam.start()
+    .then(result =>{
+       console.log("webcam started");
+    })
+    .catch(err => {
+        console.log(err);
+    });
+    WebcamControl.innerHTML = "Tutup kamera";
+
+  }else{
+    WebcamControl.value="On";
+    webcam.stop();
+    console.log("webcam stopped");
+    WebcamControl.innerHTML = "Buka kamera";
+    canvass.classList.add("d-none");
+    webcamElement.style.display="none";
+  }
 }
+
 
 function snapPhoto() {
 
   elemImage.classList.add("d-none");
 
   let picture = webcam.snap();
-  document.querySelector('#download-photo').href = picture;
 
   let image = new Image();
   image.src = picture;
 
   image.onload = function () {
     predictImage(image);
+    overlay.style.display = "block";
   }
   afterTakePhoto()
 
 }
 
 
+function closeBtn() {
+  overlay.style.display = "none";
+  canvass.classList.add("d-none");
+
+  
+
+  WebcamControl.value="On";
+  WebcamControl.innerHTML = "Buka kamera";
+}
+
 function afterTakePhoto() {
   webcam.stop();
   canvass.classList.remove("d-none");
   webcamElement.classList.add('d-none');
+  webcamElement.style.display="none";
 }
+
+
 
 const renderImage = (input) => {
   // Menampilkan gambar yang diinputkan
@@ -107,10 +138,14 @@ const renderImage = (input) => {
   webcamElement.classList.add('d-none');
   elemImage.classList.remove('d-none');
 
+  WebcamControl.value="Off";
+  getPicture()
+
   elemImage.src = window.URL.createObjectURL(input.files[0]);
 
   elemImage.onload = function () {
     predictImage(elemImage);
+    overlay.style.display = "block";
   }
 
 }
@@ -187,16 +222,3 @@ const predictImage = async (gambar) => {
   elemDetail.innerHTML = htmlData;
 }
 
-
-// Pop-Up
-const overlay = document.querySelector("#overlay");
-
-document.querySelector("#show-modal-btn").
-addEventListener("click", () => {
-    overlay.style.display = "block";
-})
-
-document.querySelector("#close-modal-btn").
-addEventListener("click", () => {
-    overlay.style.display = "none";
-})

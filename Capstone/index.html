@@ -113,10 +113,10 @@
                                 Tekan kamera atau masukan gambar dari galeri Anda untuk mendeteksi jenis sampah
                               </p>
                             </div>
-                            <div class="video">
-                              <img id="elemImage" class="d-none" src="" />
-                              <video id="webcam" autoplay playsinline></video>
-                              <canvas id="canvas" class="d-none"></canvas>
+                            <div class="canvas2">
+                                <div class="video">
+                                    <video id="webcam" autoplay playsinline></video>
+                                  </div>
                             </div>
                             <div class="tombol-deteksi">
                               <label for="inputImage" class="tombol"> Galeri </label>
@@ -127,28 +127,22 @@
                                 accept="image/*"
                                 onchange="renderImage(this)"
                               />
-                              <button class="tombol" id="webcam-control" onclick="getPicture()">
+                              <button class="tombol" value="On" id="webcam-control"onclick="getPicture()"  target="_blank">
                                 Buka Kamera
                               </button>
+                              
                               <button class="tombol" onclick="snapPhoto()">Ambil foto</button>
-                              <button class="tombol" id="show-modal-btn">Lihat Prediksi</button>
                             </div>
                             <div id="overlay">
                               <div id="prediksi">
-                                <button class="tombol" id="close-modal-btn">Close Prediksi</button>
+                                <button class="tombol" id="close-modal-btn" onclick="closeBtn()">Close Prediksi</button>
                                 <h2>
                                 Hasil Prediksi:
                                 <span style="color: green" id="elemPrediksi"></span>
                                 </h2>
+                                <img id="elemImage" class="d-none" src="" width="200" />
+                                <canvas id="canvas" class="d-none"></canvas>
                                 <ul id="elemDetail"></ul>
-                                <div class="flash"></div>
-                                <a
-                                href="#"
-                                id="download-photo"
-                                download="selfie.png"
-                                target="_blank"
-                                title="Save Photo"
-                                >file_download</a>
                             </div>
                           </div>
                     </section>

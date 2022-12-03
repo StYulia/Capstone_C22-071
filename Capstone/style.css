@@ -24,6 +24,7 @@ nav .layar-dalam {
     padding: 0 100px;
 }
 
+
 .layar-penuh{
     padding: 100px 0;
     display: flex;
@@ -33,6 +34,25 @@ nav .layar-dalam {
     flex-grow: 1;
 }
 
+canvas {
+    width: 200px;
+}
+
+/* #webcam {
+    width: 500px;
+    height: 500px;
+}
+
+.video {
+    width: 600px;
+    height: 500px;
+    border: 3px  solid black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+} */
 
 /*Pengaturan ilutrasi gambar pada beranda*/
 .ilustrasi {
@@ -55,6 +75,8 @@ nav{
     line-height: 60px;
     width: 100%;
     transition: background-color 0,5s ease;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+
     
 }
 
@@ -98,7 +120,8 @@ nav .menu ul li{
 }
 
 nav ul li a{
-    color: #fff;
+    color: black;
+    text-decoration: none;
     text-align: center;
     padding: 0px 16px 0px 16px;
     text-decoration: none;
