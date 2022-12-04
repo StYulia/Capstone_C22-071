@@ -154,6 +154,8 @@ const renderImage = (input) => {
 /** MODEL HANDLER **/
 let model = null;
 
+// Jika terjadi error menggunakan transfer learning ke deployment website
+// pergi ke model.json lalu cari Functional dan Ganti dengan Model
 (async () => {
   // Proses memuat model
   console.log("[Start] Memuat Model");
