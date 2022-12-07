@@ -37,12 +37,15 @@
                 <main>
                     <section id="Beranda" class="layar-penuh">
                         <div class="intro">
-                            <h4>TRASS</h4>
-                            <p>Klasifikasi dan Deteksi Jenis Sampah </p>
-                            <p class="desripsi">Website ini dapat membantu memudahkan kalian 
-                                <br>dalam mengklasifikasikan jenis sampah organik dan non-organik.<br>Yuk deteksi sampahmu sekarang!!!</br></p>
+                            <h4 style="color : #2B874A">TRASS</h4>
+                            <p style="color : #6EAB3B">Klasifikasi dan Deteksi Jenis Sampah </p>
+                            <p class="desripsi">Masih bingung dengan cara memilah sampah?
+                                Atau kurang mengetahui klasifikasi jenis sampah organik dan anorganik secara tepat? 
+                                <br><br>Yuk gunakan TRASS sebagai platform yang dapat membantu memudahkan kalian dalam mengklasifikasikan jenis sampah. 
+                            </br></p>
+                            <p style="color : #2B874A">Kenali jenis sampahmu dan lakukan deteksi sekarang!</p>
                             <p>
-                                <a href="#Deteksi" class="tombol">Klik Untuk Mendeteksi</a>
+                                <a href="#Deteksi" class="tombol">Deteksi Sampah</a>
                             </p>
                         </div>
                         <div class="ilustrasi">
@@ -60,10 +63,18 @@
                                 <img src="img/aboutdetect.png" alt="">
                             </div>
                             <div class="paragraf">
-                                <h5> Klasifikasi dan Deteksi Jenis Sampah</h5>
-                                <p>Kami hadir untuk memudahkan masyarakat dalam memisahkan jenis sampah, yang mana pada dasar nya sampah terdiri dari dua jenis kelompok, yaitu sampah organik dan non-organik </p>
-                                <p>Pengelolaan sampah dianggap baik apabila sampah tersebut tidak menjadi tempat berkembang biaknya bibit penyakit serta tidak menjadi media perantara menyebarnya suatu penyakit. Sampah yang dipilah dapat memudahkan pengelolaan sampah untuk didaur ulang. Untuk itu kami ada untuk membantu dalam pemilahan sampah</p>
-                                <p>INI UBAH NIHHH</p>
+                                <h4 style="color : #086A35 "> Kenali jenis sampahmu dan buang sampah dengan tepat!</h4>
+                                <p><b>TRASS</b> merupakan platform digital yang menyediakan 
+                                    layanan klasifikasi dan deteksi sampah berdasarkan organik dan non organik. 
+                                    Selain itu platform ini juga menggunakan website yang telah terintegrasi 
+                                    dengan sistem pemodelan machine learning sebagai pendeteksi jenis sampah. 
+                                </p>
+                                <p>
+                                    Lakukan deteksi dengan scan dan membuka kamera, menggunggah gambar bahkan
+                                     kalian juga dapat mengunduh gambar kalian loh! Baca artikel untuk mendapat 
+                                     atau mencari informasi terkait permasalahan Sampah di Indonesia. Deteksi 
+                                     sampahmu dan bijak membuang sampah yang sesuai ya!
+                                </p>
                             </div >
                         </article>
                         </div>
@@ -98,7 +109,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <img src="img/Nadya.png" alt="">
+                                    <img src="img/nadya.png" alt="">
                                     <h2>
                                         Nadya Zahra Rahmadani
                                     </h2>
@@ -113,36 +124,49 @@
                                 Tekan kamera atau masukan gambar dari galeri Anda untuk mendeteksi jenis sampah
                               </p>
                             </div>
-                            <div class="canvas2">
+                            <div class="canvas">
                                 <div class="video">
                                     <video id="webcam" autoplay playsinline></video>
                                   </div>
                             </div>
                             <div class="tombol-deteksi">
-                              <label for="inputImage" class="tombol"> Galeri </label>
+                              <label for="inputImage" class="tombol-kamera"> Galeri </label>
                               <input
                                 style="display: none"
                                 type="file"
                                 id="inputImage"
-                                accept="image/*"
+                                accept="image/*" 
                                 onchange="renderImage(this)"
                               />
-                              <button class="tombol" value="On" id="webcam-control"onclick="getPicture()"  target="_blank">
+                              <button class="tombol-kamera" value="On" id="webcam-control"onclick="getPicture()"  target="_blank">
                                 Buka Kamera
                               </button>
                               
-                              <button class="tombol" onclick="snapPhoto()">Ambil foto</button>
+                              <button class="tombol-kamera" onclick="snapPhoto()">Ambil foto</button>
                             </div>
                             <div id="overlay">
                               <div id="prediksi">
-                                <button class="tombol" id="close-modal-btn" onclick="closeBtn()">Close Prediksi</button>
-                                <h2>
-                                Hasil Prediksi:
-                                <span style="color: green" id="elemPrediksi"></span>
-                                </h2>
-                                <img id="elemImage" class="d-none" src="" width="200" />
+                                <div class="tutup">
+                                    <button class="tombol-tutup-prediksi" id="close-modal-btn" onclick="closeBtn()">&#10005;</button>
+                                </div>
+                                <div class="image-popup">
+                                <img id="elemImage" class="d-none" src="" width="400" height="300" />
                                 <canvas id="canvas" class="d-none"></canvas>
-                                <ul id="elemDetail"></ul>
+                                </div>
+                                <div>
+                                <p class="hasil-prediksi" id="elemPrediksi"></p>
+                                </div>
+                                <div class="konten">
+                                <p>
+                                    Hasil prediksi menunjukkan sampah ini termasuk dalam jenis sampah Organik. 
+                                    Sampah organik merupakan sampah hasil sisa dari organisme berasal dari alam 
+                                    seperti tumbuhan, hewan atau jenis lainnya. Sampah jenis organik memiliki ciri
+                                    mudah membusuk dikarenakan bakteri pengurai dapat menguraikan sampah tersebut. 
+                                    <br><br>
+                                    Pemanfaatan sampah organik ini biasanya sering dimanfaatkan menjadi pupuk loh. 
+                                    Jadi bijak dalam mengelola sampahmu dan dapatkan manfaat dari membuang sampah yang sesuai ya!
+                                </p>
+                            </div>
                             </div>
                           </div>
                     </section>
@@ -221,23 +245,35 @@
                 <footer>
                     <div class="layar-dalam">
                         <div>
-                            <img src="img/LogoFooter.png" width="300px" border-radius="30px">
+                            <img src="img/logofooter.png" width="300px" border-radius="30px">
                         </div>
 
-                        <div>
+                        <div class="daftar-kontak">
                             <h5>Kontak</h5>
-                          <img src="img/mail.jpg" width="20px" border-radius="20px"> 
-                          <p><br>juansyah2306@gmail.com<br>styulianingsih10@gmail.com<br>respatibagusasmoro@gmail.com<br>nadyazahrarahmadani@gmail.com
-                          </p>
+                          <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/in/adrian-juansyah-hasan-b8ba26242/">Juan</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/nadya-zahra-531212212/">Nadya</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/respati-bagus-asmoro-6770b1257/">Respati</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sitiyulianingsih/">Yuli</a>
+                            </li>
+                          </ul>
+                            
                         </div>
                         <div>
-                            <h5>Info</h5>
-                            Sistem Klasifikasi dan deteksi sampah ini dibuat sebagai syarat kelulusan kami pada program SIB batch 3
+                            <h5>Alamat</h5>
+                            Bintara permai 15, Bekasi, Jawa Barat.
                         </div>
                     </div>
                     <div class="layar-dalam">
                         <div class="copyright">
-                            &copy; 2022-Dicoding SIB batch 3 C222_071
+                           Copyright &copy; 2022 - Trass. All Rights Reserved.
                         </div>
                     </div>
                 </footer>

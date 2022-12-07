@@ -164,8 +164,8 @@ let model = null;
 })();
 
 const label = [ // Harus urut abjad
-  "Organic",
-  "Non-Organic"
+  "Sampah ini berjenis Organic",
+  "Sampah ini berjenis Non-Organic"
 ]
 
 const predictImage = async (gambar) => {

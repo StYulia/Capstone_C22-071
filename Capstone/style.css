@@ -35,7 +35,8 @@ nav .layar-dalam {
 }
 
 canvas {
-    width: 200px;
+    width: 500px;
+    height: 300px;
 }
 
 /* #webcam {
@@ -155,15 +156,17 @@ header{
 }
 
 .tombol {
-    background-color: #0E67A3;
+    background-color: #6EAB3B;
     height: 40px;
     line-height: 42px;
     color: #fff;
     text-decoration: none;
     display: inline-block;
     padding: 0px 20px 0px 20px;
+    padding-left: 30px;
     font-size: 15px;
     border-radius:4px ;
+    text-align: center;
 }
 
 .tombol-menu{
@@ -295,6 +298,8 @@ nav .logo img.hitam{
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 
@@ -303,6 +308,62 @@ nav .logo img.hitam{
     justify-content: center;
     padding-bottom: 50px;
     padding-right : 10px;
+}
+
+.tombol-kamera {
+    background-color: #6EAB3B;
+    height: 40px;
+    line-height: 38px;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    /* padding-left: 30px; */
+    font-size: 15px;
+    border-radius:4px ;
+    /* text-align: center; */
+    margin-left: 5px;
+    border: none;
+}
+
+/* pengaturan pop-up */
+
+.tombol-tutup-prediksi{
+    background-color: #E6DDC4;
+    height: 40px;
+    line-height: 38px;
+    color: red;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    /* padding-left: 30px; */
+    font-size: 15px;
+    border-radius:4px ;
+    /* text-align: center; */
+    margin-left: 5px;
+    border: none;
+}
+
+.image-popup{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.hasil-prediksi{
+    text-align: center;
+    color: #6EAB3B;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.konten{
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: justify;
 }
 
 #overlay{
@@ -318,14 +379,20 @@ nav .logo img.hitam{
 
 #prediksi{
     max-width: 600px;
-    height: 300px;
+    height: 800px;
     margin: auto;
-    background-color: #BBDEFB;
+    background-color: #E6DDC4;
     position: absolute;
+    border-radius: 2%;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.tutup{
+    display: flex;
+    justify-content: right;
 }
 /*Pengaturan Artikel*/
 .artikel{
@@ -405,7 +472,7 @@ nav .logo img.hitam{
     background: linear-gradient(rgba(255, 255, 255, 0), white);
   }
 
-/*pengeturan footer*/
+/*pengaturan footer*/
 footer{
     padding: 40px 100px;
     background-color: #086A35;
@@ -421,6 +488,31 @@ footer .layar-dalam{
 footer .layar-dalam div{
     width: 20%;
     flex-grow: 1;
+}
+
+footer .daftar-kontak h5{
+    padding-left: 40px;
+}
+
+footer .daftar-kontak ul li{
+    list-style: none;
+}
+
+footer .daftar-kontak ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff; 
+    font-size: 16px;
+    line-height: 2;
+    min-height: 44px;
+    text-align: left;
+}
+
+footer .daftar-kontak ul li a:hover{
+    /* padding-left: 24px; */
+    transition: all, ease, 1s;
+    color: #D6E4E5;
+    text-decoration: underline;
 }
 
 footer .layar-dalam h5{
