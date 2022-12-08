@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASS</title>
+    <link rel="stylesheet" href="style.css">
+
+</head> 
+<body>
+    <header>
+    <nav>
+        <div class="layar-dalam">
+            <div class="logo">
+                <a href=""><img src="img/Logo.png" class="putih"/></a>
+                <a href=""><img src="img/Logo.png" class="hitam"/></a>
+            </div>
+           
+            <div class="menu">
+                <a href="#" class="tombol-menu">
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                </a>
+                <ul>
+                    <li><a href="#Beranda">Beranda</a></li>
+                    <li><a href="#TentangKami">Tentang Kami </a></li>
+                    <li><a href="#Deteksi">Deteksi Sampah</a></li>
+                    <li><a href="#Artikel">Artikel</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+                <main>
+                    <section id="Beranda" class="layar-penuh">
+                        <div class="intro">
+                            <h4 style="color : #2B874A">TRASS</h4>
+                            <p style="color : #6EAB3B">Klasifikasi dan Deteksi Jenis Sampah </p>
+                            <p class="desripsi">Masih bingung dengan cara memilah sampah?
+                                Atau kurang mengetahui klasifikasi jenis sampah organik dan anorganik secara tepat? 
+                                <br><br>Yuk gunakan TRASS sebagai platform yang dapat membantu memudahkan kalian dalam mengklasifikasikan jenis sampah. 
+                            </br></p>
+                            <p style="color : #2B874A">Kenali jenis sampahmu dan lakukan deteksi sekarang!</p>
+                            <p>
+                                <a href="#Deteksi" class="tombol">Deteksi Sampah</a>
+                            </p>
+                        </div>
+                        <div class="ilustrasi">
+                            <img src="img/3detect.png" alt="">
+                        </div>
+                
+                    </section>  
+                    <section id="TentangKami">
+                        <div class="layar-dalam">
+                            <h3 style="text-align: center;">Tentang Kami</h3>
+                        </div>
+                        <div class="tentangKami">
+                        <article class="containerTM">
+                            <div class="foto">
+                                <img src="img/aboutdetect.png" alt="">
+                            </div>
+                            <div class="paragraf">
+                                <h4 style="color : #086A35 "> Kenali jenis sampahmu dan buang sampah dengan tepat!</h4>
+                                <p><b>TRASS</b> merupakan platform digital yang menyediakan 
+                                    layanan klasifikasi dan deteksi sampah berdasarkan organik dan non organik. 
+                                    Selain itu platform ini juga menggunakan website yang telah terintegrasi 
+                                    dengan sistem pemodelan machine learning sebagai pendeteksi jenis sampah. 
+                                </p>
+                                <p>
+                                    Lakukan deteksi dengan scan dan membuka kamera, menggunggah gambar bahkan
+                                     kalian juga dapat mengunduh gambar kalian loh! Baca artikel untuk mendapat 
+                                     atau mencari informasi terkait permasalahan Sampah di Indonesia. Deteksi 
+                                     sampahmu dan bijak membuang sampah yang sesuai ya!
+                                </p>
+                            </div >
+                        </article>
+                        </div>
+                        <div class="layar-dalam">
+                            <h3 style="text-align: center;">Tim Kami</h3>
+                        </div>
+                         <div class="timKami">
+                            <article class="column">
+                                <div>
+                                    <img src="img/juan.png" alt="">
+                                    <h2>
+                                        Adrian Juansyah Hasan
+                                    </h2>
+                                    <p>M009X0051</p>
+                                    <p>juansyah2306@gmail.com</p>
+                                </div>
+                                <div >
+                                    <img src="img/Yuli.jpeg" alt="">
+                                    <h2>
+                                        Siti Yulianingsih
+                                    </h2>
+                                    <p>M128Y0219</p>
+                                    <p>styulianingsih10@gmail.com</p>
+                                </div>
+                                <div>
+                                    <img src="img/juan.png" alt="">
+                                    <h2>
+                                        Respati Bagus Asmoro
+                                    </h2>
+                                    <p>M009X0084</p>
+                                    <p>respatibagusasmoro@gmail.com
+                                    </p>
+                                </div>
+                                <div>
+                                    <img src="img/nadya.png" alt="">
+                                    <h2>
+                                        Nadya Zahra Rahmadani
+                                    </h2>
+                                    <p>M128Y0217</p>
+                                    <p>nadyazahrarahmadani@gmail.com</p>
+                                </div>
+                        </section>
+                        <section id="Deteksi">
+                            <div class="layar-dalam">
+                              <h3 style="text-align: center">Deteksi</h3>
+                              <p class="ringkasan">
+                                Tekan kamera atau masukan gambar dari galeri Anda untuk mendeteksi jenis sampah
+                              </p>
+                            </div>
+                            <div class="canvas">
+                                <div class="video">
+                                    <video id="webcam" autoplay playsinline></video>
+                                  </div>
+                            </div>
+                            <div class="tombol-deteksi">
+                              <label for="inputImage" class="tombol-kamera"> Galeri </label>
+                              <input
+                                style="display: none"
+                                type="file"
+                                id="inputImage"
+                                accept="image/*" 
+                                onchange="renderImage(this)"
+                              />
+                              <button class="tombol-kamera" value="On" id="webcam-control"onclick="getPicture()"  target="_blank">
+                                Buka Kamera
+                              </button>
+                              
+                              <button class="tombol-kamera" onclick="snapPhoto()">Ambil foto</button>
+                            </div>
+                            <div id="overlay">
+                              <div id="prediksi">
+                                <div class="tutup">
+                                    <button class="tombol-tutup-prediksi" id="close-modal-btn" onclick="closeBtn()">&#10005;</button>
+                                </div>
+                                <div class="image-popup">
+                                <img id="elemImage" class="d-none" src="" width="400" height="300" />
+                                <canvas id="canvas" class="d-none"></canvas>
+                                </div>
+                                <div>
+                                <p class="hasil-prediksi" id="elemPrediksi"></p>
+                                </div>
+                                <div class="konten">
+                                <p>
+                                    Hasil prediksi menunjukkan sampah ini termasuk dalam jenis sampah Organik. 
+                                    Sampah organik merupakan sampah hasil sisa dari organisme berasal dari alam 
+                                    seperti tumbuhan, hewan atau jenis lainnya. Sampah jenis organik memiliki ciri
+                                    mudah membusuk dikarenakan bakteri pengurai dapat menguraikan sampah tersebut. 
+                                    <br><br>
+                                    Pemanfaatan sampah organik ini biasanya sering dimanfaatkan menjadi pupuk loh. 
+                                    Jadi bijak dalam mengelola sampahmu dan dapatkan manfaat dari membuang sampah yang sesuai ya!
+                                </p>
+                            </div>
+                            </div>
+                          </div>
+                    </section>
+                    <section id="Artikel">
+                        <div class="layar-dalam">
+                            <h3 style="text-align: center;">Artikel</h3>
+                        </div>
+                        <article class="artikel">
+                            <div class="container">
+                                <div class='card'>
+                                    <img src='img/5manfaat.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>5 Manfaat Pengolahan Sampah yang Baik</h2>
+                                        <p>Manfaat pengolahan sampah merupakan bahan sisa yang dapat merusak lingkungan hidup dan menyebabkan penyakit. Itulah gambaran sampah bagi sebagian orang yang tidak mau berfikir untuk menjadikannya lebih bermanfaat.</p>
+                                      </div>
+                                      <a href="https://dlh.semarangkota.go.id/5-manfaat-pengolahan-sampah-yang-baik/#:~:text=Manfaat%20pengolahan%20sampah%20dengan%20baik,terhadap%20ekosistem%20yang%20ada%20didalamnya.">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                                 
+                                <div class='card'>
+                                    <img src='img/pentingnyaPengeloaan.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>Pentingnya Pengelolaan Sampah untuk Kesejahteraan Masyarakat</h2>
+                                        <p>Universitas Ahmad Dahlan (UAD) melalui Bidang Humas dan Protokol berkesempatan mengunjungi desa binaan universitas yang berada di Desa Murtigading, Kecamatan Sanden, Kabupaten Bantul, Daerah Istimewa Yogyakarta, pada (11-06-2022).</p>
+                                      </div>
+                                      <a href="https://lldikti5.kemdikbud.go.id/home/detailpost/pentingnya-pengelolaan-sampah-untuk-kesejahteraan-masyarakat">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <img src='img/bijakmemilah.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>Alasan Kenapa Kita Harus Memilah Sampah</h2>
+                                        <p>Berbagai prestasi buruk telah didapat Indonesia berkenaan dengan sampah. Menurut data International Earth Science Information Network pada tahun 2012, Indonesia masuk dalam 10 besar negara terkotor di Dunia.</p>
+                                      </div>
+                                      <a href="https://www.panggungharjo.desa.id/alasan-kenapa-kita-harus-memilah-sampah/">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <img src='img/kenapamemilah.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>Kenapa Kita harus Memilah Sampah Sebelum Dibuang?</h2>
+                                        <p>Teman-teman, bagaimana kalau kita mulai membiasakan diri untuk memilah sampah sebelum dibuang? Kira-kira, kenapa kita harus memilah sampah sebelum dibuang?</p>
+                                      </div>
+                                      <a href="https://bobo.grid.id/read/08678346/kenapa-kita-harus-memilah-sampah-sebelum-dibuang">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <img src='img/jenissampah.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>Jenis-jenis Sampah dan Penjelasannya, Perlu Diketahui</h2>
+                                        <p>Masalah sampah sampai saat ini masih menjadi masalah krusial di Indonesia. Peneliti Lembaga Ilmu Pengetahuan Indonesia (LIPI) mengungkap bahwa salah satu faktor peningkatan volume sampah adalah perilaku masyarakat itu sendiri. Di mana membuang sampah sembarangan masih menjadi penyebab utama penumpukan sampah.</p>
+                                      </div>
+                                      <a href="https://www.merdeka.com/jateng/jenis-jenis-sampah-dan-penjelasannya-perlu-diketahui-kln.html">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                                <div class='card'>
+                                    <img src='img/tantangan.JPG' alt="gambar gagal dimuat">
+                                    <div class='card-body'>
+                                      <div class='card-text'>
+                                        <h2>IKN, Tantangan Kelola Sampah – Standar Minimal Harus Berjalan</h2>
+                                        <p>Data Kementerian Lingkungan Hidup dan Kehutanan pada tahun 2021 mencatat  volume sampah di Indonesia yang terdiri dari 154 Kabupaten/kota se-Indonesia mencapai 18,2 juta ton/tahun. Sampah yang terkelola dengan baik hanya sebanyak 13,2 juta ton/tahun atau 72,95%. </p>
+                                      </div>
+                                      <a href="https://bsilhk.menlhk.go.id/index.php/2022/06/02/ikn-tantangan-kelola-sampah-standar-minimal-harus-berjalan/#:~:text=Data%20Kementerian%20Lingkungan%20Hidup%20dan,%2C2%20juta%20ton%2Ftahun.">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </article>
+                    </section>
+                </main>
+                <footer>
+                    <div class="layar-dalam">
+                        <div>
+                            <img src="img/logofooter.png" width="300px" border-radius="30px">
+                        </div>
+
+                        <div class="daftar-kontak">
+                            <h5>Kontak</h5>
+                          <ul>
+                            <li>
+                                <a href="https://www.linkedin.com/in/adrian-juansyah-hasan-b8ba26242/">Juan</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/nadya-zahra-531212212/">Nadya</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/respati-bagus-asmoro-6770b1257/">Respati</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/sitiyulianingsih/">Yuli</a>
+                            </li>
+                          </ul>
+                            
+                        </div>
+                        <div>
+                            <h5>Alamat</h5>
+                            Bintara permai 15, Bekasi, Jawa Barat.
+                        </div>
+                    </div>
+                    <div class="layar-dalam">
+                        <div class="copyright">
+                           Copyright &copy; 2022 - Trass. All Rights Reserved.
+                        </div>
+                    </div>
+                </footer>
+           
+                <script
+                src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                crossorigin="anonymous"
+              ></script>
+              <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+              <script
+                type="text/javascript"
+                src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+              ></script>
+              <script src="javascript.js"></script>
+</body>
+</html>
